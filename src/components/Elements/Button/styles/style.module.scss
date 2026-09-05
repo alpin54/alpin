@@ -1,0 +1,20 @@
+.button {
+  border:0;
+  border-radius:5px;
+  padding:14px 20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  font-size:12px;
+  font-weight:600;
+}
+.primary {
+  background:#bba2fc;
+  color:#17121f;
+}
+.primary:hover {
+  background:#cfbaff;
+  color:#17121f;
+  transform:translateY(-2px);
+}

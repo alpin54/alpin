@@ -1,0 +1,20 @@
+.toolbox {
+  padding-block:45px;
+  border-bottom:1px solid var(--line);
+}
+.toolbox :global(.eyebrow) {
+  margin-bottom:22px;
+}
+.toolbox>div {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px 28px;
+  color:#cfccd5;
+  font-size:14px;
+}
+@media(max-width:700px) {
+  .toolbox>div {
+    font-size:13px;
+    gap:12px 22px;
+  }
+}
