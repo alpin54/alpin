@@ -1,82 +1,85 @@
 .section-wrap {
-  width:min(1200px,calc(100% - 96px));
-  margin-inline:auto;
+	width: min(1200px, calc(100% - 96px));
+	margin-inline: auto;
+	overflow: hidden;
 }
 .purple {
-  color:var(--purple);
+	color: var(--purple);
 }
 .eyebrow {
-  font-size:10px;
-  letter-spacing:2px;
-  color:#b9b8c2;
-  font-weight:600;
-  margin-bottom:25px;
-  display:flex;
-  align-items:center;
-  gap:10px;
+	font-size: 10px;
+	letter-spacing: 2px;
+	color: #b9b8c2;
+	font-weight: 600;
+	margin-bottom: 25px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 .status-dot {
-  width:7px;
-  height:7px;
-  display:inline-block;
-  border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 12px #8be3df40;
-  flex-shrink:0;
+	width: 7px;
+	height: 7px;
+	display: inline-block;
+	border-radius: 50%;
+	background: var(--cyan);
+	box-shadow: 0 0 12px #8be3df40;
+	flex-shrink: 0;
 }
 .gradient-text {
-  background:linear-gradient(110deg,#b399f5 5%,#bda5ff 45%,#80dcd9 100%);
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
+	background: linear-gradient(110deg, #b399f5 5%, #bda5ff 45%, #80dcd9 100%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 .text-link {
-  font-size:12px;
+	font-size: 12px;
 }
 .text-link span {
-  margin-left:10px;
+	margin-left: 10px;
 }
 .section-block {
-  padding-top:100px;
-  padding-bottom:90px;
-  border-bottom:1px solid var(--line);
+	padding-top: 100px;
+	padding-bottom: 90px;
+	border-bottom: 1px solid var(--line);
 }
 .muted {
-  color:#85858f;
+	color: #85858f;
 }
 .skip-link {
-  position:fixed;
-  top:-80px;
-  left:15px;
-  background:var(--purple);
-  color:#111;
-  padding:10px;
-  z-index:100;
+	position: fixed;
+	top: -80px;
+	left: 15px;
+	background: var(--purple);
+	color: #111;
+	padding: 10px;
+	z-index: 100;
 }
 .skip-link:focus {
-  top:10px;
+	top: 10px;
 }
-@media(max-width:1000px) {
-  .section-wrap {
-    width:calc(100% - 48px);
-  }
+@media (max-width: 1000px) {
+	.section-wrap {
+		width: calc(100% - 48px);
+	}
 }
-@media(max-width:700px) {
-  h1 {
-    font-size:clamp(40px,8.5vw,58px);
-  }
-  .eyebrow {
-    font-size:9px;
-    letter-spacing:1.4px;
-  }
-  .section-block {
-    padding-block:60px;
-  }
+@media (max-width: 700px) {
+	h1 {
+		font-size: clamp(40px, 8.5vw, 58px);
+	}
+	.eyebrow {
+		font-size: 9px;
+		letter-spacing: 1.4px;
+	}
+	.section-block {
+		padding-block: 60px;
+	}
 }
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior:auto;
-  }
-  *, *::before, *::after {
-    transition:none!important;
-  }
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+	}
 }
