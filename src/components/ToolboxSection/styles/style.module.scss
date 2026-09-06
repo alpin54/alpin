@@ -1,20 +1,21 @@
+@import '_cores/styles/_assets.scss';
 .toolbox {
-  padding-block:45px;
-  border-bottom:1px solid var(--line);
+  padding-block: 45px;
+  border-bottom: 1px solid var(--line);
 }
 .toolbox :global(.eyebrow) {
-  margin-bottom:22px;
+  margin-bottom: 22px;
 }
 .toolbox>div {
-  display:flex;
-  flex-wrap:wrap;
-  gap:13px 28px;
-  color:#cfccd5;
-  font-size:14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px space(7);
+  color: color(portfolio, toolkit);
+  font-size: text-size(caption);
 }
-@media(max-width:700px) {
+@include down(mobile) {
   .toolbox>div {
-    font-size:13px;
-    gap:12px 22px;
+    font-size: text-size(navigation);
+    gap: space(3) 22px;
   }
 }

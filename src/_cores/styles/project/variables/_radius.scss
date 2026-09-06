@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Variable: Radius
+   ========================================================================== */
+
+$radius: (
+  xs: 6px,
+  sm: 8px,
+  md: 12px,
+  lg: 16px,
+  xl: 24px,
+  xxl: 32px
+);
+$radius: map-merge($radius, (
+  tag: 4px, control: 5px, navigation: 6px, card: 8px, floating: 9px,
+  circle: 50%
+));

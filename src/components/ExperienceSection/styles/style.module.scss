@@ -1,62 +1,71 @@
+@import '_cores/styles/_assets.scss';
 .experience {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
+  display: flex;
+  gap: 70px;
 }
 .experience-intro {
-  font-size:14px;
-  margin-top:24px;
+  font-size: text-size(caption);
+  margin-top: space(6);
 }
 .timeline article {
-  padding:0 0 26px 25px;
-  border-left:1px solid #39323f;
-  position:relative;
+  padding: 0 0 26px 25px;
+  border-left: 1px solid color(portfolio, timeline);
+  position: relative;
 }
 .timeline article:before {
-  content:"";
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--purple);
-  position:absolute;
-  left:-4px;
-  top:8px;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: radius(circle);
+  background: var(--purple);
+  position: absolute;
+  left: -4px;
+  top: 8px;
 }
 .timeline-date {
-  font-size:9px;
-  letter-spacing:1.5px;
-  color:var(--muted);
+  font-size: text-size(overline);
+  letter-spacing: 1.5px;
+  color: var(--muted);
 }
 .timeline h3 {
-  font-size:20px;
-  font-weight:500;
-  letter-spacing:-.5px;
-  margin:10px 0;
+  font-size: text-size(item-title);
+  font-weight: fw(medium);
+  letter-spacing: -.5px;
+  margin: 10px 0;
 }
 .timeline h3 span {
-  float:right;
-  color:var(--purple);
+  float: right;
+  color: var(--purple);
 }
 .timeline h4 {
-  font-size:12px;
-  color:var(--purple);
-  font-weight:400;
-  margin-bottom:12px;
+  font-size: text-size(small);
+  color: var(--purple);
+  font-weight: fw(regular);
+  margin-bottom: space(3);
 }
 .timeline p {
-  font-size:12px;
+  font-size: text-size(small);
 }
 .timeline article:last-child {
-  padding-bottom:0;
+  padding-bottom: 0;
 }
-@media(max-width:1000px) {
+.experience > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+@include down(tablet) {
   .experience {
-    gap:35px;
+    gap: 35px;
   }
 }
-@media(max-width:700px) {
+@include down(mobile) {
   .experience {
-    grid-template-columns:1fr;
-    gap:30px;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@include down(mobile) {
+  .experience > * {
+    flex: 0 1 auto;
   }
 }

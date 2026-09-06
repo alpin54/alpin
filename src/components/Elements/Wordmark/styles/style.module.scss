@@ -1,8 +1,9 @@
+@import '_cores/styles/_assets.scss';
 .wordmark {
-  font-size:32px;
-  font-weight:800;
-  letter-spacing:-2px;
+  font-size: text-size(brand);
+  font-weight: fw(extra-bold);
+  letter-spacing: -2px;
 }
 .wordmark span {
-  color:var(--purple);
+  color: var(--purple);
 }

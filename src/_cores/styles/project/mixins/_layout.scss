@@ -1,0 +1,7 @@
+@mixin section-spacing {
+  padding-top: $section-padding-top;
+  padding-bottom: $section-padding-bottom;
+  @include down(mobile) {
+    padding-block: $section-padding-mobile;
+  }
+}

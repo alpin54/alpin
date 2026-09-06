@@ -1,0 +1,5 @@
+// Configuration only: safe to import from any component SCSS module.
+// Global selectors and font-face declarations belong in app.scss.
+@import 'project/variables/_index';
+@import 'helper/_index';
+@import 'project/mixins/_index';

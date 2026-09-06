@@ -1,69 +1,67 @@
+@import '_cores/styles/_assets.scss';
 .site-header {
-  width:min(1200px,calc(100% - 96px));
-  margin-inline:auto;
-}
-.site-header {
-  height:96px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:#101113ed;
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
+  height: $header-height;
+  position: sticky;
+  top: 0;
+  z-index: zi(header);
+  background: color(portfolio, header);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
 }
 .navigation {
-  display:flex;
-  align-items:center;
-  gap:36px;
-  font-size:13px;
+  display: flex;
+  align-items: center;
+  gap: space(9);
+  font-size: text-size(navigation);
 }
 .nav-contact {
-  border:1px solid #53515e;
-  padding:10px 20px;
-  border-radius:6px;
+  border: 1px solid color(portfolio, navigation-border);
+  padding: 10px space(5);
+  border-radius: radius(navigation);
 }
 .nav-contact span {
-  margin-left:25px;
-  color:var(--purple);
+  margin-left: 25px;
+  color: var(--purple);
 }
 .menu-toggle {
-  display:none;
+  display: none;
 }
-@media(max-width:1000px) {
+@include down(mobile) {
   .site-header {
-    width:calc(100% - 48px);
-  }
-}
-@media(max-width:700px) {
-  .site-header {
-    height:76px;
+    height: $header-height-mobile;
   }
   .menu-toggle {
-    display:block;
-    background:transparent;
-    color:var(--text);
-    border:1px solid var(--line);
-    border-radius:5px;
-    padding:7px 12px;
-    font-size:12px;
+    display: block;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: radius(control);
+    padding: 7px space(3);
+    font-size: text-size(small);
   }
   .navigation {
-    display:none;
-    position:absolute;
-    top:75px;
-    left:-24px;
-    right:-24px;
-    background:#17171c;
-    padding:24px;
-    flex-direction:column;
-    align-items:stretch;
-    gap:20px;
-    border-bottom:1px solid var(--line);
+    display: none;
+    position: absolute;
+    top: $header-height-mobile - 1px;
+    left: 0;
+    right: 0;
+    background: color(portfolio, control);
+    padding: space(6);
+    flex-direction: column;
+    align-items: stretch;
+    gap: space(5);
+    border-bottom: 1px solid var(--line);
   }
   .navigation.is-open {
-    display:flex;
+    display: flex;
   }
+}
+.site-header > :global(.container) {
+  height: 100%;
+}
+.header-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

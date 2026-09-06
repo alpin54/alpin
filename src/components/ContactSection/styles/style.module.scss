@@ -1,38 +1,47 @@
+@import '_cores/styles/_assets.scss';
 .contact {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
+  display: flex;
+  gap: 70px;
 }
 .contact h2 {
-  font-size:clamp(38px,4.4vw,58px);
+  font-size: text-size(contact-heading);
 }
 .contact p {
-  font-size:13px;
-  max-width:340px;
-  margin-top:22px;
+  font-size: text-size(navigation);
+  max-width: 340px;
+  margin-top: 22px;
 }
 .email-link {
-  display:block;
-  margin-top:26px;
-  font-size:17px;
+  display: block;
+  margin-top: 26px;
+  font-size: text-size(lead);
 }
 .phone-link, .location {
-  display:block;
-  color:var(--muted);
-  font-size:12px;
-  margin-top:8px;
+  display: block;
+  color: var(--muted);
+  font-size: text-size(small);
+  margin-top: space(2);
 }
-@media(max-width:1000px) {
+.contact > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+@include down(tablet) {
   .contact {
-    gap:35px;
+    gap: 35px;
   }
 }
-@media(max-width:700px) {
+@include down(mobile) {
   .contact {
-    grid-template-columns:1fr;
-    gap:30px;
+    flex-direction: column;
+    gap: 30px;
   }
   .contact h2 {
-    font-size:44px;
+    font-size: text-size(contact-mobile);
+  }
+}
+@include down(mobile) {
+  .contact > * {
+    flex: 0 1 auto;
   }
 }
