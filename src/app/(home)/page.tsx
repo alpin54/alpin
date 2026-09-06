@@ -1,6 +1,5 @@
 // -- utils
 import metaTag from "@utils/metaTag";
-import schema from "@utils/schema";
 
 // -- components
 import Home from "./modules";
@@ -12,9 +11,6 @@ const generateMetadata = async () => {
 	});
 };
 
-// -- schemadata
-const schemadata = schema.dynamic();
-
 // ==================
 // HomePage
 // ==================
@@ -23,5 +19,5 @@ const HomePage = async () => {
 	return <Home />;
 };
 
-export { generateMetadata, schemadata };
+export { generateMetadata };
 export default HomePage;
