@@ -24,7 +24,6 @@ const RootLayout = ({
 			</head>
 
 			<body className="hold-transition">
-				{/* Wrap children dengan GTM Data Layer */}
 				{children}
 
 				{/* -- SCHEMA DEFAULT -- */}

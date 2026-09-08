@@ -41,7 +41,7 @@ const DefaultSEO = {
 	siteName: "Alpin — Frontend Developer",
 	siteDomain: "alpin-zeta.vercel.app",
 	siteURL: "https://alpin-zeta.vercel.app",
-	themeColor: "#0d0d2b",
+	themeColor: "#bba2fc",
 	author: "Alpin",
 	copyright: "© 2026 Alpin. Built with care.",
 	robots: {
