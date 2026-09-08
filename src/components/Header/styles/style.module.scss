@@ -1,67 +1,157 @@
-@import '_cores/styles/_assets.scss';
+@import "_cores/styles/_assets.scss";
+
+$menu-duration: 300ms;
+$menu-close-duration: 380ms;
+$menu-close-delay: 100ms;
+$menu-close-easing: cubic-bezier(0.4, 0, 0.2, 1);
+$menu-easing: cubic-bezier(0.22, 1, 0.36, 1);
 .site-header {
-  height: $header-height;
-  position: sticky;
-  top: 0;
-  z-index: zi(header);
-  background: color(portfolio, header);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--line);
+	height: $header-height;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: zi(header);
+	background: color(portfolio, header);
+	backdrop-filter: blur(16px);
+	border-bottom: 1px solid var(--line);
 }
 .navigation {
-  display: flex;
-  align-items: center;
-  gap: space(9);
-  font-size: text-size(navigation);
+	display: flex;
+	align-items: center;
+	gap: space(9);
+	font-size: text-size(navigation);
 }
 .nav-contact {
-  border: 1px solid color(portfolio, navigation-border);
-  padding: 10px space(5);
-  border-radius: radius(navigation);
+	border: 1px solid color(portfolio, navigation-border);
+	padding: 10px space(5);
+	border-radius: radius(navigation);
 }
 .nav-contact span {
-  margin-left: 25px;
-  color: var(--purple);
+	margin-left: 25px;
+	color: var(--purple);
 }
 .menu-toggle {
-  display: none;
+	display: none;
 }
 @include down(mobile) {
-  .site-header {
-    height: $header-height-mobile;
-  }
-  .menu-toggle {
-    display: block;
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--line);
-    border-radius: radius(control);
-    padding: 7px space(3);
-    font-size: text-size(small);
-  }
-  .navigation {
-    display: none;
-    position: absolute;
-    top: $header-height-mobile - 1px;
-    left: 0;
-    right: 0;
-    background: color(portfolio, control);
-    padding: space(6);
-    flex-direction: column;
-    align-items: stretch;
-    gap: space(5);
-    border-bottom: 1px solid var(--line);
-  }
-  .navigation.is-open {
-    display: flex;
-  }
+	.site-header {
+		height: $header-height-mobile;
+	}
+	.menu-toggle {
+		display: block;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		padding: 0;
+		margin: 0;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		background-color: transparent;
+		@include remove-tap-highlight;
+		&-bar {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			height: 2px;
+			background: color(neutral, 1);
+			transition: transform 0.3s ease;
+			transform-origin: center;
+			&:first-child {
+				transform: translateY(-6px);
+				[aria-expanded="true"] & {
+					transform: rotate(45deg);
+				}
+			}
+
+			&:last-child {
+				transform: translateY(6px);
+				[aria-expanded="true"] & {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	.navigation {
+		display: flex;
+		position: fixed;
+		top: $header-height-mobile - 1px;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - #{$header-height-mobile});
+		height: calc(100dvh - #{$header-height-mobile});
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		background: color(portfolio, control);
+		padding: space(6);
+		flex-direction: column;
+		align-items: stretch;
+		gap: space(5);
+		border-bottom: 1px solid var(--line);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transform: translateY(-12px);
+		transition:
+			opacity $menu-close-duration $menu-close-easing $menu-close-delay,
+			transform $menu-close-duration $menu-close-easing $menu-close-delay,
+			visibility 0s linear ($menu-close-duration + $menu-close-delay);
+
+		a {
+			opacity: 0;
+			transform: translateY(-6px);
+			transition:
+				opacity 240ms $menu-close-easing,
+				transform 280ms $menu-close-easing,
+				color 200ms ease;
+
+			// Close from the bottom upward before the panel finishes fading.
+			@for $index from 1 through 5 {
+				&:nth-child(#{$index}) {
+					transition-delay: (5 - $index) * 20ms, (5 - $index) * 20ms, 0ms;
+				}
+			}
+		}
+	}
+	.navigation.is-open {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		transform: translateY(0);
+		transition:
+			opacity $menu-duration ease,
+			transform $menu-duration $menu-easing,
+			visibility 0s;
+
+		a {
+			opacity: 1;
+			transform: translateY(0);
+			transition-duration: 220ms, 220ms, 200ms;
+			transition-timing-function: ease, $menu-easing, ease;
+
+			@for $index from 1 through 5 {
+				&:nth-child(#{$index}) {
+					transition-delay: 40ms + ($index - 1) * 25ms, 40ms + ($index - 1) * 25ms, 0ms;
+				}
+			}
+		}
+	}
 }
 .site-header > :global(.container) {
-  height: 100%;
+	height: 100%;
 }
 .header-content {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.navigation,
+	.navigation a,
+	.menu-toggle-bar {
+		transition: none;
+	}
 }

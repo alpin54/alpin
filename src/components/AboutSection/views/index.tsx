@@ -6,13 +6,13 @@ export default function AboutSection() {
     <section className="section-block" id="about">
       <div className="container">
         <div className={styles["about"]}>
-          <div>
+          <div data-reveal>
             <p className={"eyebrow"}>01 / A LITTLE ABOUT ME</p>
             <h2>More than pixels.<br />
               <span className={"muted"}>Purpose in every line.</span>
             </h2>
           </div>
-          <div className={styles["about-copy"]}>
+          <div className={styles["about-copy"]} data-reveal data-reveal-order="1">
             <p>I’m Alpin, a frontend developer with 3+ years of experience building web applications for e-commerce, B2B, and corporate brands.</p>
             <p>I bridge design and development with scalable React and Next.js architecture, reusable design systems, and a sharp eye for the details that make a website feel right. I work closely with designers, backend developers, and project managers to bring it all together.</p>
             <div className={styles["stats"]}>

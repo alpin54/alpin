@@ -7,8 +7,8 @@ export default function ContactSection() {
     <section className="section-block" id="contact">
       <div className="container">
         <div className={styles["contact"]}>
-          <div>
-            <p className={"eyebrow"}>04 / LET’S CONNECT</p>
+          <div data-reveal>
+            <p className={"eyebrow"}>05 / LET’S CONNECT</p>
             <h2>Have something<br />in mind?<br />
               <span className={"gradient-text"}>Let’s make it real.</span>
             </h2>

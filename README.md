@@ -120,3 +120,11 @@ Production build, ESLint, and TypeScript checks pass. Generated HTML is checked 
 ## Shared SCSS configuration
 
 Component styles now import `@import '_cores/styles/_assets.scss';` and use the shared color, typography, spacing, radius, shadow, breakpoint, and layout helpers. See [Panduan styling](src/_cores/styles/README.md) for configuration locations and examples. Global theme variables and local font declarations are emitted once through `app.scss`.
+
+## Scroll animations
+
+GSAP and ScrollTrigger are loaded on the client by `src/_cores/hooks/useScrollAnimations`. `MainSite` scopes the hook to page content; media contexts revert animations and triggers on unmount or when reduced-motion preferences change.
+
+Add `data-reveal` to a content block for a fade-up reveal. Use `data-reveal="fade"` on artwork with an existing CSS transform, and `data-reveal-order={index % 3}` for short staggered entrances. Avoid putting reveal markers on both a parent and its descendants. Shared duration, distance, easing, and stagger settings live in `src/_cores/configs/motion/index.ts`.
+
+Reveals play once per page mount. Keyboard focus immediately completes a reveal. Server-rendered content remains visible without JavaScript or if GSAP fails to load. Reduced-motion users see the static layout. This lifecycle uses GSAP's [matchMedia cleanup](https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/).

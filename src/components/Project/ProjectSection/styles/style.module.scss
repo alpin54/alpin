@@ -45,3 +45,12 @@
     flex: 0 1 auto;
   }
 }
+
+.all-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: space(3);
+  margin-top: space(10);
+  color: var(--purple);
+  font-size: text-size(caption);
+}

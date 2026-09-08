@@ -1,0 +1,30 @@
+@import "_cores/styles/_assets.scss";
+.education {
+	display: flex;
+	gap: 70px;
+}
+.education-intro {
+	font-size: text-size(caption);
+	margin-top: space(6);
+}
+
+.education > * {
+	flex: 1 1 0;
+	min-width: 0;
+}
+@include down(tablet) {
+	.education {
+		gap: 35px;
+	}
+}
+@include down(mobile) {
+	.education {
+		flex-direction: column;
+		gap: 30px;
+	}
+}
+@include down(mobile) {
+	.education > * {
+		flex: 0 1 auto;
+	}
+}

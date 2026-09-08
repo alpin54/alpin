@@ -1,21 +1,23 @@
-@import '_cores/styles/_assets.scss';
+@import "_cores/styles/_assets.scss";
 .button {
-  border: 0;
-  border-radius: radius(control);
-  padding: 14px space(5);
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  font-size: text-size(small);
-  font-weight: fw(semi-bold);
+	border: 0;
+	border-radius: radius(control);
+	padding: 14px space(5);
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+	font-size: text-size(small);
+	font-weight: fw(semi-bold);
+	transition: all 0.3s ease;
 }
 .primary {
-  background: color(portfolio, button);
-  color: color(portfolio, on-button);
+	background: color(portfolio, button);
+	color: color(portfolio, on-button);
+	transition: all 0.3s ease;
 }
 .primary:hover {
-  background: color(portfolio, button-hover);
-  color: color(portfolio, on-button);
-  transform: translateY(-2px);
+	background: color(portfolio, button-hover);
+	color: color(portfolio, on-button);
+	transform: translateY(-2px);
 }

@@ -5,7 +5,7 @@ import useContactForm from "../states";
 export default function ContactForm() {
   const { status, contact } = useContactForm();
   return (
-    <form className={styles["contact-form"]} onSubmit={contact}>
+    <form data-reveal className={styles["contact-form"]} onSubmit={contact}>
       <div className={styles["form-row"]}>
         <label>Your name<input name="name" placeholder="Jane Smith" autoComplete="name" required maxLength={100} />
         </label>

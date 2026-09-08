@@ -9,7 +9,7 @@ export default function HeroSection() {
 		<section id="home">
 			<div className="container">
 				<div className={styles["hero"]}>
-					<div className={styles["hero-copy"]}>
+					<div className={styles["hero-copy"]} data-reveal>
 						<p className={"eyebrow"}>
 							<span className={"status-dot"} /> FRONTEND DEVELOPER · INDONESIA
 						</p>
@@ -38,7 +38,7 @@ export default function HeroSection() {
 							web.
 						</div>
 					</div>
-					<div className={styles["hero-art"]}>
+					<div className={styles["hero-art"]} data-reveal="fade" data-reveal-order="2">
 						<div className={styles.orbit} />
 						<div className={[styles["orbit"], styles["orbit-two"]].join(" ")} />
 						<div className={styles["code-label"]}>&lt;developer /&gt;</div>

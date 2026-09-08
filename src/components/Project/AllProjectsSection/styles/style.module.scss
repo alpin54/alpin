@@ -1,0 +1,53 @@
+@import '_cores/styles/_assets.scss';
+
+.content { min-width: 0; }
+.back {
+  display: inline-flex;
+  color: var(--muted);
+  font-size: text-size(small);
+  margin-bottom: space(10);
+}
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: space(6);
+  margin-bottom: space(12);
+}
+.description {
+  max-width: 600px;
+  margin-top: space(5);
+  font-size: text-size(body);
+}
+.count {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: text-size(small);
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(12) space(6);
+}
+.list > * {
+  flex: 0 0 calc((100% - #{space(12)}) / 3);
+  min-width: 0;
+}
+.contact {
+  display: flex;
+  justify-content: space-between;
+  gap: space(6);
+  padding-top: space(10);
+  margin-top: space(15);
+  border-top: 1px solid var(--line);
+}
+.contact a { color: var(--purple); }
+@include down(tablet) {
+  .heading { align-items: flex-start; flex-direction: column; }
+  .list > * { flex-basis: calc((100% - #{space(6)}) / 2); }
+}
+@include down(mobile) {
+  .list > * { flex-basis: 100%; }
+  .contact { flex-direction: column; gap: space(3); }
+}
+

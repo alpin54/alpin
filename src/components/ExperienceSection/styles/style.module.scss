@@ -7,48 +7,14 @@
   font-size: text-size(caption);
   margin-top: space(6);
 }
-.timeline article {
-  padding: 0 0 26px 25px;
-  border-left: 1px solid color(portfolio, timeline);
-  position: relative;
-}
-.timeline article:before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: radius(circle);
-  background: var(--purple);
-  position: absolute;
-  left: -4px;
-  top: 8px;
-}
-.timeline-date {
-  font-size: text-size(overline);
-  letter-spacing: 1.5px;
-  color: var(--muted);
-}
-.timeline h3 {
-  font-size: text-size(item-title);
-  font-weight: fw(medium);
-  letter-spacing: -.5px;
-  margin: 10px 0;
-}
-.timeline h3 span {
-  float: right;
-  color: var(--purple);
-}
-.timeline h4 {
-  font-size: text-size(small);
-  color: var(--purple);
-  font-weight: fw(regular);
-  margin-bottom: space(3);
-}
-.timeline p {
-  font-size: text-size(small);
-}
-.timeline article:last-child {
-  padding-bottom: 0;
-}
+
+
+
+
+
+
+
+
 .experience > * {
   flex: 1 1 0;
   min-width: 0;
