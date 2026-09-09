@@ -12,7 +12,7 @@ import AddtreeImage from "@assets/image/dummy/adtree.jpg";
 // Real project details; the accompanying artwork is an illustrative concept.
 const projects: Project[] = [
 	{
-		link: "https://sfi-group.id/en",
+		link: "https://sfigroup.co.id/en",
 		name: "SFI Group",
 		image: SFIImage,
 		category: "E-COMMERCE",

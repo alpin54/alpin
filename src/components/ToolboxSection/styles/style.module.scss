@@ -1,21 +1,91 @@
 @import '_cores/styles/_assets.scss';
+
 .toolbox {
-  padding-block: 45px;
+  padding-block: space(15);
   border-bottom: 1px solid var(--line);
 }
-.toolbox :global(.eyebrow) {
-  margin-bottom: 22px;
+.heading {
+  margin-bottom: space(8);
 }
-.toolbox>div {
+.heading :global(.eyebrow) {
+  margin-bottom: space(4);
+}
+.groups {
   display: flex;
   flex-wrap: wrap;
-  gap: 13px space(7);
+  gap: space(5);
+  margin: 0;
+}
+.group {
+  flex: 1 1 calc((100% - #{space(5)}) / 2);
+  min-width: 0;
+  padding: space(6);
+  border: 1px solid var(--line);
+  border-radius: radius(card);
+  background: color(portfolio, control);
+  transition: border-color 240ms ease, background-color 240ms ease;
+}
+.group:last-child {
+  flex-basis: 100%;
+}
+.label {
+  display: flex;
+  align-items: center;
+  gap: space(3);
+  margin-bottom: space(5);
+  color: var(--text);
+  font-size: text-size(body);
+  font-weight: fw(medium);
+}
+.number {
+  flex-shrink: 0;
+  color: var(--purple);
+  font-family: ff(mono);
+  font-size: text-size(meta);
+  letter-spacing: 1px;
+}
+.items {
+  margin: 0;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tag {
+  margin: 0;
+  padding: space(2) space(3);
+  border: 1px solid color(portfolio, tag-border);
+  border-radius: radius(tag);
   color: color(portfolio, toolkit);
-  font-size: text-size(caption);
+  font-size: text-size(small);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+@media (hover: hover) {
+  .group:hover {
+    border-color: rgba(color(portfolio, purple), 0.4);
+    background-color: color(portfolio, surface);
+  }
 }
 @include down(mobile) {
-  .toolbox>div {
-    font-size: text-size(navigation);
-    gap: space(3) 22px;
+  .toolbox {
+    padding-block: space(10);
   }
+  .groups {
+    gap: space(4);
+  }
+  .group {
+    flex-basis: 100%;
+    padding: space(5);
+  }
+  .label {
+    font-size: text-size(caption);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .group { transition: none; }
 }
