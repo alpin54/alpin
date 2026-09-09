@@ -60,7 +60,7 @@ export default function HeroSection() {
 						<span className={styles["spark"]}>✳</span>
 					</div>
 					<div className={styles["hero-bottom"]}>
-						<span>SCROLL TO EXPLORE ↓</span>
+						<a className={styles["scroll-explore"]} href="#about">SCROLL TO EXPLORE ↓</a>
 						<span>DESIGN MINDED. DEVELOPMENT DRIVEN.</span>
 					</div>
 				</div>

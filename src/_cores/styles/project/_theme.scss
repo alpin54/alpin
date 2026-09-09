@@ -1,12 +1,12 @@
 // Emit CSS custom properties once;
 // Component modules only import configuration.
 :root {
-  color-scheme: dark;
-  --bg: #{color(portfolio, page)};
-  --surface: #{color(portfolio, surface)};
-  --text: #{color(portfolio, text)};
-  --muted: #{color(portfolio, muted)};
-  --line: #{color(portfolio, line)};
-  --purple: #{color(portfolio, purple)};
-  --cyan: #{color(portfolio, cyan)};
+	color-scheme: dark;
+	--bg: #{color(portfolio, page)};
+	--surface: #{color(portfolio, surface)};
+	--text: #{color(portfolio, text)};
+	--muted: #{color(portfolio, muted)};
+	--line: #{color(portfolio, line)};
+	--purple: #{color(portfolio, purple)};
+	--cyan: #{color(portfolio, cyan)};
 }
